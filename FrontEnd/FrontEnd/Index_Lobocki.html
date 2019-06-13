@@ -2,15 +2,34 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="CodeTheWay_Lobocki.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <meta charset="utf-8" />
     <title>Code The Way</title>
 
 </head>
-<body onload="showHide()">
-    <img src="Images/Code The Way/CodeTheWay Logo.png" /height="5%" width="10%">
-    <p class="majorHeading">Code The Way</p>
-
+<body onload="showHide()" class="bodyText">
+    <div class="container=fluid">
+        <div class="row">
+            <div class="col-sm-2" align="center">
+                <img src="Images/Code The Way/CodeTheWay Logo.png" />
+            </div>
+            <div class="col-sm-10">
+                <p class="majorHeading">Code The Way</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"><a href="LifeNavigators.html" class="navigationLink">Life Navigators</a></div>
+            <div class="col-sm-3"><a href="Heroes.html" class="navigationLink">Heroes for HealthCare</a></div>
+            <div class="col-sm-3"><a href="Media.html" class="navigationLink">Media</a></div>
+            <div class="col-sm-3"></div><a href="Index_Lobocki.html" class="navigationLink">Code The Way</a></div>
+        </div>
+    </div>
     <p class="minorHeading">Mission</p>
 
 
@@ -24,35 +43,27 @@
     </p>
     <p>Code the Way model includes:</p>
     <ul>
-        <li>
-            <div class="tooltip">
-                Student access to real-world job experience
-                <div class="tooltiptext">
-                    In addition to an advanced course that may earn post-secondary credits, students get experience working collaboratively on a project that benefits a nonprofit, culminating in a presentation to business leaders.
-                </div>
-            </div>
+        <li class="bodyText" data-toggle="tooltip" data-placement="bottom" title="In addition to
+            an advanced course that may earn post-secondary credits, students get experience
+            working collaboratively on a project that benefits a nonprofit, culminating in a
+            presentation to business leaders.">
+            Student access to real-world job experience
         </li>
-        <li>
-            <div class="tooltip">
-                Companies are part of the solution
-                <div class="tooltiptext">
-                    Companies invest in education, make technology more accessible to nonprofits, offer their employees a meaningful volunteer experience, and contribute to the talent pipeline.
-                </div>
-            </div>
+        <li class="bodyText" data-toggle="tooltip" data-placement="bottom"
+            title="  Companies invest in education, make technology more accessible to nonprofits, offer their employees a meaningful volunteer experience, and contribute to the talent pipeline.">
+            Companies are part of the solution
         </li>
-        <li>
-            <div class="tooltip">
-                Increasing certified computer science teachers
-                <div class="tooltiptext">
-                    Support and training for computer science teacher certification increases the availability and quality of high school computer science programs.
-                </div>
-            </div>
+
+
+        <li class="bodyText" data-toggle="tooltip" data-placement="bottom"
+            title="Support and training for computer science teacher certification increases the availability and quality of high school computer science programs.">
+            Increasing certified computer science teachers
         </li>
 
 
     </ul>
-    <img src="Images/Code The Way/Team Learning.jpg"/ height="250px" width="400px" align="right">
-    <button onclick="showHide()" class="buttonFormatting">Show Vision </button>
+    <img src="Images/Code The Way/Team Learning.jpg" height="250" width="400" align="right" />
+    <button onclick="showHide()" class="navigationLink">Show Vision </button>
     <div id="vision">
         <p class="minorHeading">Vision</p>
         <div class="bodyText">
@@ -61,12 +72,8 @@
             </p>
         </div>
     </div>
-    <p class="minorHeading">Links</p>
-    <ul>
-        <a href="LifeNavigators.html" class="navigationLink">Life Navigators</a>
-        <a href="Heroes.html" class="navigationLink">Heroes for HealthCare</a>
-        <a href="Media.html" class="navigationLink">Media</a>
-    </ul>
+
+
 
 
 
@@ -83,4 +90,20 @@
             x.style.display = "block";
         }
     }
+    function getRandomColor() {
+        var color = "";
+        for (var i = 0; i < 3; i++) {
+            var sub = Math.floor(Math.random() * 256).toString(16);
+            color += (sub.length == 1 ? "0" + sub : sub);
+        }
+        return "#" + color
+    }
+    function changeColor() {
+        var c = getRandomColor();
+        var title = document.getElementById("color");
+        title.style.color = c;
+    }
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 </script>
