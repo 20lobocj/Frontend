@@ -1,7 +1,6 @@
 ﻿
-    .majorHeading
-
-{
+    .majorHeading {
+       text-align: center;
     font-family: Georgia;
     font-weight: bold;
     color: black;
@@ -18,7 +17,7 @@
     color: black;
     font-size: medium;
 }
-.buttonFormatting {
+.navigationLink {
     background-color: #557A95;
     border: 2px solid #557A95;
     color: white;
@@ -32,7 +31,26 @@
     cursor: pointer;
     transition-duration: 0.4s;
 }
-.buttonFormatting:hover {
+.navigationLink:hover {
     background-color: white;
     color: #557A95;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltip .tooltiptext {
+    visibility:hidden;
+    width: 500px;
+    background-color: black;
+    color: #fff;    
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
 }
