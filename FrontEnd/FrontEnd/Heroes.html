@@ -4,45 +4,92 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="CodeTheWay_Lobocki.css" />
     <title>Heroes for HealthCare</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CodeTheWay_Lobocki.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-    <body onload="showHide()">
-        <img src="Images/Heroes/Heroes Logo.png" />
-        <p class="majorHeading" align="center">Heroes For HealthCare</p>
-        <img src="Images/Heroes/Heroes2.png" / height="150px" width="300px" align="left">
-        <p class="minorHeading">Mission</p>
-        <p>
-            Our non-profit organization is a resource for our military personnel to start a career in healthcare.
-        </p>
-        <img src="Images/Heroes/Heroes3.png" / height="250px" width="400px" align="right">
-        <p align="right" class="minorHeading">Unemployed Veterans</p>
-        <p align="right">
-            Many U.S. Veterans find it hard to secure a job in healthcare when they’re ready to work in the civilian world. Even after showing dedication, strong work ethic, and leadership while serving our country, many military members can’t find jobs.
-        </p>
-        <ul>
-
-            <p>
-                453,000 unemployed veterans in 2016
-            </p>
-            <p>
-                Post-Sept. 11 veterans tend to be unemployed at higher rates than other veterans
-            </p>
-        </ul>
-        <button onclick="showHide()" class="buttonFormatting">Show Message From The President  </button>
-        <div id="Message From the President">
-            <p align="left" class="minorHeading">Message From the President</p>
-            <div class="bodyText">
-                <p>
-                    I started Heroes for Healthcare to help our U.S. military personnel receive the resources and credentials they need to continue their career in healthcare as a civilian.
-
-                    We need supporters like you to help our mission so our service members can get a job and better their lives.
-
-                    After all they did for us, supporting this organization seems like the right thing to do. Make a difference today by supporting Heroes for Healthcare.
-
-                </p>
+<body onload="showHide()">
+    <div class="container=fluid">
+        <div class="row">
+            <div class="col-sm-2" align="center">
+                <img src="Images/Heroes/Heroes Logo.png" />
+            </div>
+            <div class="col-sm-10">
+                <p class="majorHeading">Heroes for Health Care</p>
             </div>
         </div>
-        <p align="center"><a href="Index_Lobocki.html" class="navigationLink">Home</a></p>
-    </body>
+        <div class="row">
+            <div class="col-sm-3"><a href="LifeNavigators.html" class="navigationLink">Life Navigators</a></div>
+            <div class="col-sm-3"><a href="Heroes.html" class="navigationLink">Heroes for HealthCare</a></div>
+            <div class="col-sm-3"><a href="Media.html" class="navigationLink">Media</a></div>
+            <div class="col-sm-3"><a href="Index_Lobocki.html" class="navigationLink">Code The Way</a></div>
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row">
+                    <p class="minorHeading">Mission</p>
+                </div>
+                <div class="row">
+                    <p class="minorHeading">Unemployed Veterans</p>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <p>
+                        Our non-profit organization is a resource for our military personnel to start a career in healthcare.
+                    </p>
+                </div>
+                <div class="row">
+                    <p>
+                        Many U.S. Veterans find it hard to secure a job in healthcare when they’re ready to work in the civilian world. Even after showing dedication, strong work ethic, and leadership while serving our country, many military members can’t find jobs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+        <div class="col-sm-5">
+            <img src="Images/Heroes/Heroes2.png" height="150" width="300" />
+        </div>
+        <div>
+        </div>
+    </div>
+
+
+
+
+    <img src="Images/Heroes/Heroes3.png" height="250px" width="400px" align="right" />
+
+    <ul>
+
+        <p>
+            453,000 unemployed veterans in 2016
+        </p>
+        <p>
+            Post-Sept. 11 veterans tend to be unemployed at higher rates than other veterans
+        </p>
+    </ul>
+    <button onclick="showHide()" class="buttonFormatting">Show Message From The President  </button>
+    <div id="Message From the President">
+        <p align="left" class="minorHeading">Message From the President</p>
+        <div class="bodyText">
+            <p>
+                I started Heroes for Healthcare to help our U.S. military personnel receive the resources and credentials they need to continue their career in healthcare as a civilian.
+
+                We need supporters like you to help our mission so our service members can get a job and better their lives.
+
+                After all they did for us, supporting this organization seems like the right thing to do. Make a difference today by supporting Heroes for Healthcare.
+
+            </p>
+        </div>
+    </div>
+    <p align="center"><a href="Index_Lobocki.html" class="navigationLink">Home</a></p>
+</body>
 </html>
 <script>
     function showHide() {
@@ -54,4 +101,20 @@
             x.style.display = "block";
         }
     }
+    function getRandomColor() {
+        var color = "";
+        for (var i = 0; i < 3; i++) {
+            var sub = Math.floor(Math.random() * 256).toString(16);
+            color += (sub.length == 1 ? "0" + sub : sub);
+        }
+        return "#" + color
+    }
+    function changeColor() {
+        var c = getRandomColor();
+        var title = document.getElementById("color");
+        title.style.color = c;
+    }
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 </script>
